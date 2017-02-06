@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_1259628525'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1259628525%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+    <script src="http://sdk.talkingdata.com/app/h5/v1?appid=56CC095378589F7998EE1331E25C01A6&vn=嘟嘟巴士微信端&vc=1.0"></script>
+    <link rel="stylesheet" href="/build/static/css/v2/style-ten_e09803d.css">
+    <meta name="keywords" content="嘟嘟红包">
+    <style type="text/css">
+        body{
+            overflow: auto;
+            background-color:#f51e41;
+            -webkit-overflow-scrolling:touch;
+            text-align: center;
+            padding-bottom:3rem;    
+        }
+        .hb_wrap,.head_content{
+            margin:1rem 2rem;
+        }
+        /*.head_content{
+            margin-top: 85%;
+        }*/
+        .bg_img{
+            display:block;
+            width:100%;
+        }
+        .flex_block{
+            display:box;
+            display:-webkit-box;
+            display:-moz-box;
+            -moz-box-align:center;
+            -webkit-box-align:center;
+            -o-box-align:center;
+            box-align:center;
+        }
+        .flexgroup_1{
+            /*display:block;*/
+            -moz-box-flex: 1; 
+            -webkit-box-flex: 1; 
+            box-flex: 1;
+        }
+        .voucher_date{
+            text-align: right;
+        }
+        .voucher{
+            border-radius: 3px;
+            color:#be890b;
+        }
+        .voucher_title{
+            background-color:#ffe354;
+            padding:5px 10px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            min-height:1rem;
+        }
+        .voucher_type{
+            font-size:1.2rem;
+            color:#ff2a29;
+        }
+        .voucher_money{
+            display:inline-block;
+        }
+        .voucher_content{
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            padding:10px 10px 5px 10px;
+            background:#fff7cc url('/build/static/image/activity/hongbao/voucher_bar_fce3535.png') 0 -6px no-repeat;
+        }
+        .f_big{font-size:3rem;font-weight: bolder;}
+        .rmb{vertical-align: .2rem;font-size:1.4rem;font-weight: bolder;}
+        .voucher_tips{
+            display:box;
+            display:-webkit-box;
+            display:-moz-box;
+            -moz-box-orient:vertical;
+            -webkit-box-orient:vertical;
+            -o-box-orient:vertical;
+            box-orient:vertical; 
+            text-align: right;
+        }
+        .voucher_tips>div{
+            -moz-box-flex: 1; 
+            -webkit-box-flex: 1; 
+            box-flex: 1;
+            margin: 2px;
+        }
+        .voucher_use>span{
+            display:inline-block;position:relative;
+        }
+        .voucher_use>span:not(:last-child):after{
+            content:'|';
+            margin-left:3px;
+        }
+        .says_block{
+            margin-top:1rem;
+            color:#fff;
+        }
+        .says_tel{
+            color:#ffe354;
+            margin-left:5px;
+        }
+        .hb_btn{
+            display:block;
+            margin:1rem 0;
+            height:42px;
+            line-height: 42px;
+            font-size:1.2rem;
+            border-radius: 3px;
+        }
+        a.buy{
+            background-color:#ffe354;
+            color:#653334;
+            letter-spacing: 2px;
+            box-shadow: 0 5px 0px #fcd719;
+        }
+        a.share{
+            border:2px solid #fff;
+            color:#fff;
+        }
+        .frirend_block{
+            margin-top:2rem;
+            text-align: initial;
+        }
+        .sc_title{
+            color:#ffe354;
+        }
+        .sc_title:before,.sc_title:after{
+            content:'';
+            display:block;
+            margin:0 5px;
+            /*width:60px;*/
+            height:1px;
+            background-color:#ffe354;
+            -moz-box-flex: 1; 
+            -webkit-box-flex: 1; 
+            box-flex: 1;
+        }
+        .fb_cell{
+            margin:20px 0;
+        }
+        .fb_cell>img{width:50px;height:50px;}
+        .fb_cell_r{
+            display:box;
+            display:-webkit-box;
+            display:-moz-box;
+            -moz-box-orient:vertical;
+            -webkit-box-orient:vertical;
+            -o-box-orient:vertical;
+            box-orient:vertical; 
+            margin-left:10px;
+            -moz-box-flex: 1; 
+            -webkit-box-flex: 1; 
+            box-flex: 1;
+            color:#fff;
+        }
+        .fb_cell_r>div{
+            -moz-box-flex: 1; 
+            -webkit-box-flex: 1; 
+            box-flex: 1;
+            margin:5px 0;
+        }
+        .friend_money{
+            font-size:1.6rem;
+            font-weight: bolder;
+            color:#ffe354;
+        }
+        .rules_p{
+            color:#fff;
+            margin:1rem 0;
+            padding-left:1.1rem;
+            position:relative;
+        }
+        .rules_p>span{
+            position:absolute;
+            left:0;
+        }
+        .ml_10{margin-left:10px;}
+
+    .receive_wrap{
+        margin-top:20px;
+        padding:3px;
+        border-radius: 3px;
+        background-color:rgba(0,0,0,.1);
+    }
+    .receive_flag{
+        background-color:rgba(0,0,0,.2);
+        border-radius: 3px;
+        padding:10px 15px;
+    }
+    .receive_flag>div{margin:10px 0;}
+    .ipt_tel{
+        margin-bottom:10px;
+        width:100%;
+        height:42px;
+        text-align: center;
+        font-size:1.2rem;
+    }
+    .receive_btn{
+        background-color:#ffe354;
+        color:#653334;
+        letter-spacing: 2px;
+        box-shadow: 0 5px 0px #fcd719;
+    }
+    .mod_mask{
+        position:fixed;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
+        z-index:1000;
+        background-color:rgba(0,0,0,0.5);
+    }
+    .mod_wid{
+        position:absolute;
+        top:50%;
+        left:50%;
+        border-radius: 3px;
+        transform:translate3d(-50%,-50%,0);
+        -webkit-transform:translate3d(-50%,-50%,0);
+        -moz-transform:translate3d(-50%,-50%,0);
+        -o-transform:translate3d(-50%,-50%,0);
+        background-color:#fff;
+        padding:20px;
+        min-width: 240px;
+    }
+    .mod_close{
+        position:absolute;
+        width:23px;
+        top:0;
+        right:15px;
+    }
+    .mod_wid>p{margin:10px 0;}
+    .mod_ipt{
+        height:42px;
+        line-height:42px;
+        font-size:1.2rem;
+        border:1px solid #d5d5d5;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .mod_btn{
+        background-color:#f51e41;
+        color:#fff;
+        font-size:1.2rem;
+    }
+    .headimg{
+        background-position:0px,0px;
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+        padding-top:85%;
+        padding-bottom:5%;
+    }
+</style>
+</head>
+<body>
+<div style="display:none;"><img id="shareImg" src="/build/static/image/activity/hongbao/hongbao_icon1_6bbb715.jpg"/></div>
+<div style="display:none;" id="shareText">嘟嘟发红包啦！快叫上小伙伴一起来领吧！</div>
+    <section id="headTitle" class="headimg">
+        <div id="headContainer" class="head_content">
+            <!--代金券领取完毕-->
+            <div id="getOverBlock" class="voucher" style="display:none;">
+                <div class="voucher_title flex_block"></div>
+                <div class="voucher_content flex_block">
+                    <img src="/build/static/image/activity/hongbao/find_fa22e77.png" alt="" width="35">
+                    <div class="flexgroup_1 txa_l ml_10">来晚一步，该红包已经被领完了哦~下次要趁早哦</div>
+                </div>
+            </div>
+            <a id="actB" href="" class="hb_btn share" style="display:none;"></a>
+            <!--代金券领取板块-->
+            <div id="receiveBlock" class="receive_wrap" style="display:none;">
+                <div class="receive_flag">
+                    <div><input id="userPhone" class="ipt_tel" placeholder="请输入手机号码" type="number"></div>
+                    <div class="hb_btn receive_btn" onclick="checkReceivePhone();">领取红包</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="hb_wrap">
+        <!--好友运气-->
+        <section id="receiversContainer" class="frirend_block" style="display:none;">
+            <div class="sc_title flex_block"><span>看朋友手气</span></div>
+        </section>
+
+        <!--活动规则-->
+        <section id="rulesContainer" class="frirend_block" style="display:none;">
+            <div class="sc_title flex_block"><span>活动规则</span></div>
+        </section>
+    </div>
+
+    <!--弹窗-->
+    <div class="mod_mask" style="display:none;">
+        <div class="mod_wid">
+            <img onclick="modWidFunc('hide');" src="/build/static/image/activity/hongbao/mod_close_aaccc8d.png" alt="" class="mod_close">
+            <p>当前手机账户 <span class="f_red" id="widPhone"></span></p>
+            <p id="widTipsNext" style="display:none;">下次领取时红包才会放入该手机号哦</p>
+            <input id="widIptPhone" type="number" class="mod_ipt" placeholder="请输入手机号"/>
+            <div class="hb_btn mod_btn" onclick="checkModifyPhone();">修改</div>
+        </div>
+    </div>
+
+
+<!--代金券-->
+<script type="text/html" id="voucherModel">
+    <div class="voucher">
+        <div class="voucher_title flex_block">
+            <span class="voucher_type">{{gift_info.gift_name}}</span>
+            {{if gift_info.start_time}}<div class="voucher_date flexgroup_1">{{gift_info.start_time}}至{{gift_info.end_time}}有效</div>{{/if}}
+        </div>
+        <div class="voucher_content flex_block">
+            <div class="voucher_money">
+                {{if gift_info.gift_name == '折扣券'}}
+                    <span class="f_big">{{gift_info.discount}}折</span>
+                {{else}}
+                    <span class="rmb">￥</span><span class="f_big">{{gift_info.money}}</span>
+                {{/if}}
+            </div>
+            <div class="voucher_tips flexgroup_1">
+                <div>{{gift_info.gift_remark}}</div>
+                <div class="voucher_use">
+                    <span>{{gift_info.gift_line_remark}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="says_block">红包已经放入手机账户<span id="changeFuncBlock" class="says_tel" onclick="modWidFunc('show')"><span>{{receive_mobile}}</span><span id="changeBtn"class="says_tel">修改></span></div>
+    <div class="says_block" style="display:none;">下次红包将放入手机账号 <span id="saysPhone"></span></div>
+    <!--hb_btns-->
+    <a href="/index.php" class="hb_btn buy">去购票</a>
+</script>
+
+<!--领取过的用户列表-->
+<script id="receiversModel" type="text/html">
+   {{each gift_user_info}}
+        <div class="fb_cell flex_block">
+            <img src="{{$value.user_head_img}}" alt="">
+            <div class="fb_cell_r">
+                <div class="flex_block">
+                    <span>{{$value.user_nick}}</span>
+                    <div class="flexgroup_1 txa_r">{{$value.get_time}}</div>
+                </div>
+                <div class="flex_block">
+                    <div class="flexgroup_1 txa_l">{{$value.words}}</div>
+                    {{if $value.discount_num > 0}}
+                        <span class="friend_money">{{$value.discount_num}}折</span>
+                    {{else}}
+                        <span class="friend_money">￥{{$value.money}}元</span>
+                    {{/if}}
+                    
+                </div>
+            </div>
+        </div>
+   {{/each}}
+</script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="/build/static/js/ten/template_ff5b770.js"></script>
+<script src="/build/static/js/zepto.min_43dde47.js"></script>
+<script type="text/javascript">
+
+var user_id = '0';
+var share_user_id = '613986';
+var gift_id = '60';
+var gift_no = 'HB201702060656333266';
+var bundPhone = 0;
+var baseobj;
+
+$(function(){
+    getBaseInfo();
+});
+
+/**
+ * [getBaseInfo 获取页面基本信息]
+ */
+function getBaseInfo(){
+    $.post('/index.php/users/hongbao/hongbao_share_style',{gift_id:gift_id},function(json){
+        hbInit(json);
+        shareSetting(json.data);
+    },'json');
+}
+
+/**
+ * [hbInit 红包页面初始化]
+ * @param  {[type]} dataobj [基本信息]
+ */
+function hbInit(dataobj){
+    baseobj = dataobj.data;//页面样式数据
+    $('body').css('backgroundColor',baseobj.bg_color);//页面背景色
+    $('#headTitle').css('backgroundImage','url("'+baseobj.bg_img+'")');//顶部背景图
+    //活动规则
+    var rules_html = '<p class="rules_p">'+baseobj.activity_rule+'</p>';
+    $("#rulesContainer").append(rules_html).show();
+
+    //判断是否有绑定领取红包的手机号码
+    if(!!bundPhone){
+        $("#widPhone").text(bundPhone);//弹窗手机号码
+        getHongbao();//部分基本信息用于领取红包后使用
+    }else{
+        $('#receiveBlock').show();//显示输手机号领取板块
+    }
+}
+
+/**
+ * [修改号码弹窗]
+ * @param  {[string]} action [显示or隐藏]
+ */
+    function modWidFunc(action){
+        switch(action){
+            case 'show':
+                $('.mod_mask').show();
+                break;
+
+            case 'hide':
+                $('.mod_mask').hide();
+                break;
+        }
+    }
+
+/**
+ * 弹框
+ * text:弹框内容，或html代码
+ * hide_or_not:是否自动隐藏 boolean
+ * filter:需要添加滤镜效果的元素id/class string
+ * noscroll:需要禁止滚动的元素 string
+ * callback:回调函数 function
+ * */
+    function popShow(text,hide_or_not,filter,noscroll,callback){
+            var noscroll_obj;
+            if(filter != ''){
+                var filter_obj = $('#' + filter).length ? $('#' + filter) : $('.' + filter);//id或者class
+                filter_obj.addClass('filter');
+            }
+            if(noscroll != ''){
+                noscroll_obj = $('#' + noscroll).length ? $('#' + noscroll) : $('.' + noscroll);
+                noscroll_obj.css('overflow','hidden');
+            }
+
+            if($('.wdmask').length){//页面已经存在wdmask元素
+                $('.wdmask').remove();
+            }
+            var wdmask = '<div class="wdmask"><div id="wdmaskText">' + text + '</div></div>';
+            $('body').append(wdmask);
+            $('.wdmask').on('click',function(){
+                $('.wdmask').hide();
+                $('.filter').removeClass('filter');
+
+                if(!!noscroll_obj){
+                    noscroll_obj.css('overflow','auto');
+                }
+                if(!!callback){
+                    callback();
+                }
+            });
+            if(hide_or_not){
+                clearTimeout(popTimeout);
+                var popTimeout = setTimeout(function(){
+                    $('.wdmask').hide();
+                    $('.filter').removeClass('filter');
+                    if(!!noscroll_obj){
+                        noscroll_obj.css('overflow','auto');
+                    }
+                    if(!!callback){
+                        callback();
+                    }
+                },3000);
+            }
+
+        }
+
+/**
+ * [检查领取手机号码输入格式]
+ */
+    function checkReceivePhone(){
+        var phone = $('#userPhone').val();
+        var mobilereg = /^1[3|4|5|7|8][0-9]{9}$/;
+        if(!mobilereg.test(phone)) { 
+            //手机格式未通过验证
+            popShow('请输入有效的手机号码',1); 
+            $('#userPhone').focus(); 
+        }else{//手机格式符合要求
+            getHongbao(phone);
+            $("#widPhone").text(phone);//弹窗手机号码
+        }
+    }
+
+/**
+ * [checkModifyPhone 检查要修改的手机号码]
+ */
+    function checkModifyPhone(){
+        var wid_phone = $('#widIptPhone').val();//弹窗中输入的手机号码
+        var mobilereg = /^1[3|4|5|7|8][0-9]{9}$/;
+        if(!mobilereg.test(wid_phone)) { 
+            //手机格式未通过验证
+            popShow('请输入有效的手机号码',1); 
+            $('#widPhone').focus(); 
+        }else{//手机格式符合要求
+            bundNewPhone(wid_phone);//修改绑定的手机号码
+        }
+    }
+
+/**
+ * [bundNewPhone 绑定新号码]
+ * @param  {[type]} phonenum [用户输入的电话号码]
+ */
+    function bundNewPhone(phonenum){
+        $.post('/index.php/users/hongbao/change_hongbao_phone',{user_id:user_id,mobile:phonenum,gift_id:gift_id},function(json){
+                if(json.result == '0000'){
+                    $("#widPhone,#saysPhone").text(phonenum);//弹窗手机号码更新为修改后的号码
+                    $("#widTipsNext,.says_block").show();//显示提示
+                    $(".mod_mask").hide();
+                }
+        },'json');
+    }
+
+/**
+ * [getHongbao 领取红包]
+ * @param  {[object]} phone [用户输入的电话号码]
+ */
+    function getHongbao(phone){
+        //有传入phone则用phone，没有则用bundPhone
+        var param_phone = !!phone ? phone : bundPhone;
+        $.post('/index.php/users/hongbao/get_hong_bao',{
+            user_id:user_id,
+            share_user_id:share_user_id,
+            gift_id:gift_id,
+            mobile:param_phone,
+            gift_no:gift_no
+        },function(json){
+            //移除输入手机号码板块
+            $('#receiveBlock').remove();
+            var tempdata = json.data;
+            // tempdata.activity_text = baseobj.activity_text;//按钮文案
+            if(!!baseobj.activity_text){
+                $("#actB").text(baseobj.activity_text).attr('href',baseobj.activity_url).show();
+            }
+            
+            //修改背景图
+            $('#headTitle').css('backgroundImage','url("'+baseobj.bg_img_min+'")');//顶部背景图
+
+            //领取用户列表板块
+            for(var i=0,len=tempdata.gift_user_info.length; i<len; i++){
+                tempdata.gift_user_info[i].discount_num = parseFloat(tempdata.gift_user_info[i].discount)*10;
+            }
+            var html2 = template('receiversModel',tempdata);
+            $("#receiversContainer").append(html2).show();
+
+            switch(json.result){
+                case '0000'://领取成功
+                case '7006'://已经领取过
+                    //代金券板块
+                    tempdata.gift_info.discount = tempdata.gift_info.discount*10;
+                    var html = template('voucherModel',tempdata);
+                    $("#headContainer").prepend(html);
+                    break;
+                case '0007':
+                    alert(json.info);
+                    break;
+                default://其他情况统一处理为领取完毕
+                    $("#getOverBlock").show();
+                    break;
+            }
+
+            //没有用户id，为web端登陆，不修改手机号码
+            if(parseInt(user_id) == 0){
+                $("#changeFuncBlock").attr('onclick','');
+                $("#changeBtn").hide();
+            }
+        },'json');
+    }
+
+    function shareSetting(shareobj){
+        //meta标签
+        $("meta[name=keywords]").attr('content',shareobj.share_title);
+        //title
+        $("title").text(shareobj.share_title);
+        $("#shareImg").text(shareobj.share_icon);
+        $("#shareText").text(shareobj.share_text);
+
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: 'wx0ed2274c010c963f', // 必填，公众号的唯一标识
+            timestamp: 1486357221, // 必填，生成签名的时间戳
+            nonceStr: 'JJjyheLVqLqa8UxZ', // 必填，生成签名的随机串
+            signature: 'b05ef27c8f0ddf30ff4d8848c773f9121f98d609',// 必填，签名，见附录1
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+
+        wx.ready(function(){
+            //分享到朋友圈
+            wx.onMenuShareTimeline({
+                title: shareobj.share_title, // 分享标题
+                link: '', // 分享链接
+                imgUrl: shareobj.share_icon, // 分享图标
+                success: function () {
+        //                用户确认分享后执行的回调函数
+        //                    show_tips('分享成功');
+                },
+                cancel: function () {
+        //                用户取消分享后执行的回调函数
+                }
+            });
+            //分享给好友
+            wx.onMenuShareAppMessage({
+                title: shareobj.share_title, // 分享标题
+                desc: shareobj.share_text, // 分享描述
+                link: '', // 分享链接
+                imgUrl: shareobj.share_icon, // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+        //                    show_tips('分享成功');
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+        //                    show_tips("取消了！");
+                }
+            });
+            // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+        });
+
+        wx.error(function(res){
+
+            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+
+        });
+
+        wx.checkJsApi({
+            jsApiList: ['chooseImage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+            success: function(res) {
+                // 以键值对的形式返回，可用的api值true，不可用为false
+                // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+            }
+        });
+    }
+</script>
+</body>
